@@ -28,7 +28,6 @@ public:
     }
 };
 
-
 void heading()
 {
     cout << right << setw(85) << setfill(' ') << "Password Holder" << endl
@@ -42,31 +41,31 @@ void menu()
     {
         cout << i + 1 << ". " << options[i] << endl;
     }
-     cout << "Please input your choice: ";
+    cout << "Please input your choice: ";
 }
 void passwordBook()
 {
     system("cls");
-    cout<<setw(85)<<right<<setfill(' ')<<"Input Your Master Password: ";
+    cout << setw(85) << right << setfill(' ') << "Input Your Master Password: ";
     string input;
-    cin>>input;
-    string masterPassword="uniking";
-    if (input==masterPassword)
+    cin >> input;
+    string masterPassword = "uniking";
+    if (input == masterPassword)
     {
-        cout<<"Your FB Password is: Hello World"<<endl;
+        cout << "Your FB Password is: Hello World" << endl;
     }
-    
 }
 
 void theme()
-{   system("cls");
+{
+    system("cls");
     cout << right << setw(85) << setfill(' ') << "Theme Selector" << endl
-                 << endl;
+         << endl;
     string themeContainer[3] = {"Red", "White", "Blue"};
-            for (int i = 0; i < 3; i++)
-            {
-                cout << i + 1 << ". " << themeContainer[i] << endl;
-            }
+    for (int i = 0; i < 3; i++)
+    {
+        cout << i + 1 << ". " << themeContainer[i] << endl;
+    }
     cout << "Please input your choice: ";
 }
 
@@ -75,48 +74,45 @@ void exit()
     system("exit");
 }
 
-
-
 int main()
 {
     Theme color;
-do{
-    heading();
-    menu();
-    cin>>menuChoice;
-    if (menuChoice==1)
+    do
     {
-        passwordBook();
-    }
-    else if (menuChoice==2)
-    {
-        theme();
-        cin>>themeChoice;
-        switch (themeChoice)
+        heading();
+        menu();
+        cin >> menuChoice;
+        if (menuChoice == 1)
         {
-        case 1:
-            color.red();
-            break;
-        case 2:
-        color.white();
-        break;
-        case 3:
-        color.blue();
-        break;
-        
-        default:
-        cout<<"Invalid Input"<<endl;
-            break;
+            passwordBook();
         }
+        else if (menuChoice == 2)
+        {
+            theme();
+            cin >> themeChoice;
+            switch (themeChoice)
+            {
+            case 1:
+                color.red();
+                break;
+            case 2:
+                color.white();
+                break;
+            case 3:
+                color.blue();
+                break;
+
+            default:
+                cout << "Invalid Input" << endl;
+                break;
+            }
         }
-        else if (menuChoice==3)
+        else if (menuChoice == 3)
         {
             exit();
         }
-        
-    
-    cout<<"Press B to go back : ";
-        cin>>back;
-}
-while(back=='B'||back=='b');
+
+        cout << "Press B to go back : ";
+        cin >> back;
+    } while (back == 'B' || back == 'b');
 }
