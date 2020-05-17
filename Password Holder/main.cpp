@@ -24,7 +24,7 @@ public:
     }
     void white()
     {
-        system("color white");
+        system("color 06");
     }
 };
 
@@ -79,6 +79,7 @@ int main()
     Theme color;
     do
     {
+        system("cls");
         heading();
         menu();
         cin >> menuChoice;
@@ -112,7 +113,7 @@ int main()
             exit();
         }
 
-        cout << "Press B to go back : ";
+        cout << "Press B to go back & E to exit the program : ";
         cin >> back;
     } while (back == 'B' || back == 'b');
 }
