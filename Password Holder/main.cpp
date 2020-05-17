@@ -112,6 +112,10 @@ int main()
         {
             exit();
         }
+        else 
+        {
+            cout<<"Your Input is not valid. Please try again :-)"<<endl;
+        }
 
         cout << "Press B to go back & E to exit the program : ";
         cin >> back;
